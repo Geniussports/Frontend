@@ -11,15 +11,15 @@
       // Log in a User
       var loginUser = function (userObj) {
 
-        $http({
-          method: 'GET',
-          url: SERVER.URL + 'login',
-          headers: SERVER.CONFIG.headers,
-          params: userObj
-        }).then (function (res) {
-          console.log(res);
-          $cookieStore.put('currentUser', res.data);
-        });
+        // $http({
+        //   method: 'GET',
+        //   url: SERVER.URL + 'login',
+        //   headers: SERVER.CONFIG.headers,
+        //   params: userObj
+        // }).then (function (res) {
+        //   console.log(res);
+        //   $cookieStore.put('currentUser', res.data);
+        // });
         
       };
   
