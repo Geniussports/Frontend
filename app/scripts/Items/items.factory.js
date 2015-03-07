@@ -19,7 +19,7 @@
     
       var getSingleList = function (listId) {
 
-        return ('rootUrl') + 'classes/Items', {
+        return ('rootUrl' + 'classes/Items', {
           headers: 'rootUrl'.headers,
           params: {
             where: {

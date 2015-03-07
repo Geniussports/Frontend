@@ -37,7 +37,7 @@
     })
 
     //Coach's page
-    .when('/'), {
+    .when('/', {
       templateUrl: '/scripts/users/coach.tpl.html',
       controller: 'UserCtrl'
     })
@@ -64,7 +64,7 @@
     .when('/', {
       templateUrl: '/scripts/items/item.tpl.html',
       controller: 'ItemsCtrl'
-
+    })
     
     
 

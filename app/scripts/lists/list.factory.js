@@ -34,11 +34,11 @@
 
         listObj.ACL = ACLObj;
 
-        return ('rootUrl' + 'classes/Lists', listObj,);
+         return $http.post('rootUrl' + 'classes/Lists', listObj);
       };
 
       var deleteList = function (id) {
-        return ('rootUrl' + 'classes/Lists/' + id, );
+        return ('rootUrl' + 'classes/Lists/' + id);
       };
     
   
