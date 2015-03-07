@@ -1,0 +1,20 @@
+<h2>Coaches List</h2>
+
+<input type="text" ng-model="searchtext" placeholder="filter">
+
+<hr>
+
+	<ul class="lists">
+		 <li ng-repeat="l in lists | filter:searchtext | orderBy: 'title' "><a href="#/lists/{{ l.objectId }}">{{ l.title }}
+		 </a> <span ng-click="deleteMe(l.objectId, $index)">X</span>
+		 </li>  
+	</ul>
+
+<hr>
+	<h4>Add New List</h4>
+		<form ng-submit="addList(list)">
+  			<input ng-model="list.title" type="text" placeholder="List Title">
+  			<button>Add List</button>
+		</form>
+
+<!--template to show the lists available to the coach and giving him the ability to add and/or delete as needed

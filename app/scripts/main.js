@@ -5,6 +5,8 @@
   angular.module('GeniusSports', ['ngRoute', 'ngCookies'])
 
   .constant('SERVER', {
+
+    //rootUrl:'https';
     
     URL: '',
     
