@@ -32,9 +32,41 @@
 
     // Main Page
     .when('/', {
-      templateUrl: '',
-      controller: ''
+      templateUrl: '/scripts/users/main.tpl.html',
+      controller: 'UserCtrl'
     })
+
+    //Coach's page
+    .when('/'), {
+      templateUrl: '/scripts/users/coach.tpl.html',
+      controller: 'UserCtrl'
+    })
+
+    //parents page
+    .when('/', {
+      templateUrl: '/scripts/users/parents.tpl.html',
+      controller: 'UserCtrl'
+    })
+
+    //coach's lists
+    .when('/', {
+      templateUrl: '/scripts/lists/coaches.list.tpl.html',
+      controller: 'ListCtrl'
+    })
+
+    //parents lists
+    .when('/', {
+      templateUrl: '/scripts/lists/parents.list.tpl.html',
+      controller: 'ListCtrl'
+    })
+
+    //items template
+    .when('/', {
+      templateUrl: '/scripts/items/item.tpl.html',
+      controller: 'ItemsCtrl'
+
+    
+    
 
 
     // Go Home ET
