@@ -1,0 +1,13 @@
+<h2>Parents lists</h2>
+
+<input type="text" ng-model="searchtext" placeholder="Filter">
+
+<hr>
+		<ul class="lists">
+   			<li ng-repeat="l in lists | filter:searchtext | orderBy: 'title' "><a href="#/lists/{{ l.objectId }}">{{ l.title }}
+   				
+   			</li>  
+		</ul>
+
+
+<!--template to allow parents to scroll through various lists for info. Updating will be done on the items.tpl.template

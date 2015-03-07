@@ -20,7 +20,7 @@
     <nav class="top-bar" data-topbar role="navigation" ng-controller="NavCtrl">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#/">Top 5 Lists</a></h1>
+          <h1><a href="#/">GENIUS SPORTS TEAM PAGE</a></h1>
         </li>
       </ul>
       <section class="top-bar-section">
@@ -35,7 +35,26 @@
 
     <div class="container row">
       <div class="large-12 columns" ng-view></div>
-    </div>
+            
+          <section class="tab" ng-controller="TabCtrl">
+            <ul>
+              <li ng-class="{active:panel.isSelected(1) }">
+                <a href ng-click="panel.selectTab(1)">Coaches</a>
+              </li>
+              <li ng-class="{active:panel.isSelected(2)  }">
+                <a href ng-click="panel.selectTab(2)">Parents</a>
+              </li>
+              <li ng-class="{active:panel.isSelected(3)}">
+                <a href ng-click="panel.selectTab(3)">Players</a>
+              </li>
+            </ul>
+            <br />
+        
+          
+ 
+          </section>
+      
+     </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -52,6 +71,12 @@
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/layout/nav.controller.js"></script>
+        <script src="scripts/items/items.controller.js"></script>
+        <script src="scripts/items/items.factory.js"></script>
+        <script src="scripts/layout/nav.controller.js"></script>
+        <script src="scripts/lists/list.controller.js"></script>
+        <script src="scripts/lists/list.factory.js"></script>
+        <script src="scripts/tabs/tabs.controller.js"></script>
         <script src="scripts/users/user.controller.js"></script>
         <script src="scripts/users/user.factory.js"></script>
 
