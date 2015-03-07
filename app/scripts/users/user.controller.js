@@ -8,13 +8,6 @@
 
     function ($scope, UserFactory, $location) {
 
-      // If Currently Logged in - Leave this controller
-      var user = UserFactory.user();
-      if (user) {
-        return $location.path('/');
-      }
-
-
       // Login Method
       $scope.loginUser = function (userObj) {
         UserFactory.login(userObj);
