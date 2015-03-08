@@ -1,45 +1,49 @@
 ;(function () {
-  
-  'use strict';
+ 
+ 'use strict';
 
-  angular.module('GeniusSports', ['ngRoute', 'ngCookies'])
+ angular.module('GeniusSports', ['ngRoute', 'ngCookies'])
 
-  .constant('SERVER', {
-    
-    URL: 'https://geniussports.herokuapp.com',
-    
-    CONFIG: {
-      
-      // headers : {
-      //   'X-Parse-Application-Id' : 'QPhfi521jPOVih27xiiqooP9B2egqpLjKSbRDI2H',
-      //   'X-Parse-REST-API-Key'  : '13hAN2gWrhn6RmijJ3TnZp8RRq7GkvBffVCKRvo4',
-      //   'Content-Type' : 'application/json'
-      // }
-    } 
-  })
+ .constant('SERVER', {
 
-  .config([ '$routeProvider', function ($routeProvider) {
+   //rootUrl:'https';
+   
+   URL: 'https://geniussports.herokuapp.com/',
+   
+   CONFIG: {
+     
+     headers : {
+       'Content-Type' : 'application/json'
+     }
+   } 
+ })
 
-    $routeProvider
+ .config([ '$routeProvider', function ($routeProvider) {
 
-    // Login Page
-    .when('/login', {
-      templateUrl: '/scripts/users/login.tpl.html',
-      controller: 'UserCtrl'
-    })
+   $routeProvider
 
-    // Main Page
-    .when('/', {
-      templateUrl: '',
-      controller: ''
-    })
+   // Login Page
+   .when('/', {
+     templateUrl: '/scripts/users/login.tpl.html',
+     controller: 'UserCtrl'
+   })
 
+   // Register Page 
+   .when('/register', {
+     templateUrl: '/scripts/users/register.tpl.html',
+     controller: 'UserCtrl'
+   })
 
-    // Go Home ET
-    .otherwise('/');
-    
-  }]);
+   // Your Teams Page
+   .when('/yourteams/:id', {
+     templateUrl: '/scripts/users/teams.tpl.html',
+     controller: 'UserCtrl'
+   })
 
+   // Go Home ET
+   .otherwise('/');
+   
+ }]);
 
 
 }());

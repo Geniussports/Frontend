@@ -8,23 +8,33 @@
 
     function ($http, SERVER, $cookieStore, $location) {
 
-      // Log in a User
-      var loginUser = function (userObj) {
-
-        // $http({
-        //   method: 'GET',
-        //   url: SERVER.URL + 'login',
-        //   headers: SERVER.CONFIG.headers,
-        //   params: userObj
-        // }).then (function (res) {
-        //   console.log(res);
-        //   $cookieStore.put('currentUser', res.data);
-        // });
+      // Register a User
+      var registerUser = function (userObj) {
         
+        $http.post(SERVER.URL + 'users', userObj, SERVER.CONFIG)
+          .success( function (res) {
+            console.log(res.user.id);
+            SERVER.CONFIG.headers["authentication_token"] = res.authentication_token;
+            $location.path('/yourteams/' + res.user.id);
+          }
+        ); 
+      };
+
+      // Login a User
+      var loginUser = function (userObj) {
+        
+        $http.post(SERVER.URL + 'users/sign_in', userObj, SERVER.CONFIG)
+          .success( function (res) {
+            SERVER.CONFIG.headers["authentication_token"] = res.authentication_token;
+            $location.path('/yourteams/' + res.user.id);
+          }
+        );               
       };
   
       return {
-        login : loginUser,
+        register : registerUser,
+        login : loginUser
+
       };
 
     }
