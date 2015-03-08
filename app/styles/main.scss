@@ -2,10 +2,34 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+// Variables
+$blue: HSLA(221, 100%, 55%, 1);
+$red: HSLA(0, 100%, 38%, 1);
+
+
 // Custom Styles
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+}
+
+.top-bar {
+	background: $red;
+}
+
+.team-box {
+	&:hover {
+		border: 1px solid $blue;
+	}
+}
+
+.nav-button {
+	background: white;
+	color: $red;
+}
+
+.player-photo {
+	width: 60px;
 }
 
