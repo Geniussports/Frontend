@@ -5,17 +5,53 @@
 // Variables
 $blue: HSLA(221, 100%, 55%, 1);
 $red: HSLA(0, 100%, 38%, 1);
+$green: HSLA(112, 66%, 38%, 1);
+$topbar-menu-icon-color: HSLA(0, 100%, 38%, 1);
+$topbar-menu-link-color: HSLA(0, 100%, 38%, 1);
 
 
 // Custom Styles
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  color: white;
+  background-image: url("/images/turf.jpg");
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	&:hover {
+		color: yellow;
+	}
+}
+
+.home-text {
+	text-align: center;
+	color: white;
+}
+
+.home-body {
+	background-color: HSLA(112, 66%, 38%, .8);
+	text-align: center;
+	h2 {
+		color: white;
+	}
+	h3 {
+		color: white;
+
+	}
 }
 
 .top-bar {
 	background: $red;
+}
+
+.button {
+	background-color: $red;
+	&:hover {
+		background-color: $blue;
+	}
 }
 
 .team-box {

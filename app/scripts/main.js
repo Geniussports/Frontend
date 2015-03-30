@@ -22,8 +22,13 @@
 
    $routeProvider
 
-   // Login Page
    .when('/', {
+     templateUrl: '/scripts/users/home.tpl.html',
+     controller: 'UserCtrl'
+   })
+
+   // Login Page
+   .when('/login', {
      templateUrl: '/scripts/users/login.tpl.html',
      controller: 'UserCtrl'
    })
@@ -41,7 +46,7 @@
    })
 
    // The Team Page
-   .when('/team', {
+   .when('/team/:id', {
      templateUrl: '/scripts/users/main.tpl.html',
      controller: 'UserCtrl'
    })
@@ -49,6 +54,12 @@
    // Add Team Page
    .when('/add-team', {
      templateUrl: '/scripts/users/add-team.tpl.html',
+     controller: 'UserCtrl'
+   })
+
+   // Add Team Page
+   .when('/add-player', {
+     templateUrl: '/scripts/users/add-player.tpl.html',
      controller: 'UserCtrl'
    })
 

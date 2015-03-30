@@ -11,30 +11,40 @@
       // Register a User
       var registerUser = function (userObj) {
         
-        $http.post(SERVER.URL + 'users', userObj, SERVER.CONFIG)
-          .success( function (res) {
-            console.log(res.user.id);
-            SERVER.CONFIG.headers["authentication_token"] = res.authentication_token;
-            $location.path('/yourteams/' + res.user.id);
-          }
-        ); 
+        return $http.post(SERVER.URL + 'users', userObj, SERVER.CONFIG);
+           
       };
 
       // Login a User
       var loginUser = function (userObj) {
         
-        $http.post(SERVER.URL + 'users/sign_in', userObj, SERVER.CONFIG)
-          .success( function (res) {
-            SERVER.CONFIG.headers["authentication_token"] = res.authentication_token;
-            $location.path('/yourteams/' + res.user.id);
+        return $http.post(SERVER.URL + 'users/sign_in', userObj);
+                       
+      };
+
+      // Add a Team
+      var addATeam = function (teamObj) {
+
+        return $http.post(SERVER.URL + 'teams/', teamObj, {
+          params: {
+            auth_token: $cookieStore.get('auth_token')
           }
-        );               
+        });              
+      };
+
+      var getAllTeams = function () {
+        return $http.get(SERVER.URL + 'user', {
+          params: {
+            auth_token: $cookieStore.get('auth_token')
+          }
+        });
       };
   
       return {
         register : registerUser,
-        login : loginUser
-
+        login : loginUser,
+        addTeam : addATeam,
+        getTeams : getAllTeams
       };
 
     }
